@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,500,900i');
+
+$skyblue: #c7f2f1;
+$darkblue: #052837;
+$primary-type: Rubik;
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  font-family: $primary-type, Arial;
+  line-height: 1.5;
+  font-weight: 300;
+  font-size: 18px;
+  color: $darkblue;
+  background-color: white;
+}
+h1 {
+  font-size: 24px;
+  font-weight: 900;
+  font-style: italic;
+}
+h2 {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+h3 {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 64px;
+  width: 100%;
+  z-index: 1;
+  background-color: $skyblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 48px;
+
+  transition: background-color 1s;
+
+  h1, nav {
+    flex: 1;
+  }
+  nav {
+    text-align: right;
+  }
+  a {
+    margin: 0 0 0 16px;
+  }
+
+  &.scrolled {
+    background-color: white;
+  }
+}
+a {
+  color: $darkblue;
+  text-decoration: none;
+}
+.btn {
+  display: inline-block;
+  background-color: $darkblue;
+  color: white;
+  border-radius: 50px;
+  padding: 0.5em 1.5em;
+
+  &:hover {
+    background-color: darken($darkblue, 5%);
+  }
+}
+p {
+  margin-bottom: 3em;
+}
+
+section.hero {
+  margin-top: 64px;
+  padding: 160px 48px 160px 48px;
+  background-color: $skyblue;
+  background-image: url(img/hero.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+
+  h2, p {
+    max-width: 450px;
+  }
+
+}
+section.content {
+  margin: 48px;
+  display: flex;
+  flex-direction: row;
+
+  div.content {
+    margin: 0 0 0 48px;
+  }
+
+  &:nth-child(odd) {
+    flex-direction: row-reverse;
+
+    div.content {
+      margin: 0 48px 0 0;
+    }
+  }
+}
