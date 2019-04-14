@@ -4,6 +4,17 @@ $skyblue: #c7f2f1;
 $darkblue: #052837;
 $primary-type: Rubik;
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform:translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform:translateY(0px);
+  }
+}
+
 html {
   box-sizing: border-box;
 }
@@ -64,6 +75,35 @@ header {
     background-color: white;
   }
 }
+.face {
+  position: relative;
+
+  .iris {
+    position: absolute;
+    top: 23px;
+    left: 11px;
+
+    &.iris-right {
+      left: 49px;
+    }
+
+    div {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      background-color: $darkblue;
+      border-radius: 3px;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+
+
+
+
 a {
   color: $darkblue;
   text-decoration: none;
@@ -106,11 +146,14 @@ section.content {
     margin: 0 0 0 48px;
   }
 
-  &:nth-child(odd) {
+  &:nth-child(even) {
     flex-direction: row-reverse;
 
     div.content {
       margin: 0 48px 0 0;
     }
   }
+}
+h2, h3, p, section img, a.btn {
+  opacity: 0;
 }

@@ -1,4 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Rubik:300,500,900i");
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 html {
   box-sizing: border-box;
 }
@@ -61,6 +71,28 @@ header.scrolled {
   background-color: white;
 }
 
+.face {
+  position: relative;
+}
+.face .iris {
+  position: absolute;
+  top: 23px;
+  left: 11px;
+}
+.face .iris.iris-right {
+  left: 49px;
+}
+.face .iris div {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: #052837;
+  border-radius: 3px;
+  transform: translate(-50%, -50%);
+}
+
 a {
   color: #052837;
   text-decoration: none;
@@ -102,11 +134,15 @@ section.content {
 section.content div.content {
   margin: 0 0 0 48px;
 }
-section.content:nth-child(odd) {
+section.content:nth-child(even) {
   flex-direction: row-reverse;
 }
-section.content:nth-child(odd) div.content {
+section.content:nth-child(even) div.content {
   margin: 0 48px 0 0;
+}
+
+h2, h3, p, section img, a.btn {
+  opacity: 0;
 }
 
 /*# sourceMappingURL=app.css.map */
